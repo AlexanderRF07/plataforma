@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('artistas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('ideventos')->unsigned();
-          
+            $table->bigInteger('idevento')->unsigned();          
             $table->string('nidentidad');
             $table->string('nombre');
             $table->string('email');
@@ -24,7 +23,7 @@ return new class extends Migration
             $table->date('fecharegistro');
             $table->string('estado');
             $table->timestamps();
-            $table->foreign('ideventos')->references('id')->on('eventos');
+            $table->foreign('idevento')->references('id')->on('eventos');
 
         });
     }
